@@ -6,7 +6,7 @@ using System.Text;
 
 namespace TaskServ_Frontend
 {
-    public class Win32
+    public static class Win32
     {
         // The WM_COMMAND message is sent when the user
         // selects a command item from a menu, 
@@ -53,14 +53,5 @@ namespace TaskServ_Frontend
             int Msg,                // message
             int wParam,             // first message parameter
             int lParam);            // second message parameter
-
-        public Win32()
-        {
-
-        }
-
-        ~Win32()
-        {
-        }
     }
 }

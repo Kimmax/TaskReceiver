@@ -8,35 +8,45 @@ namespace TaskServ_Frontend
 {
     class CommandMusicStartStop : Command
     {
-        private WMPLib.WindowsMediaPlayer wmp = new WMPLib.WindowsMediaPlayer();
-        private System.Int32 iHandle;
+        private MediaPlayer.MediaPlayer player = new MediaPlayer.WindowsMediaPlayer();
 
         public CommandMusicStartStop(string trigger) : base(trigger) { }
 
         public override void Execute(List<Tuple<string, string>> param)
         {
-            iHandle = Win32.FindWindow("WMPlayerApp", "Windows Media Player");
-            PlayPause(Convert.ToInt32(param[0].Item2));
-        }
-
-        public void PlayPause(int Status)
-        {
-            switch (Status)
+            switch(param[0].Item2)
             {
-                case 0:
-                    //wmp.URL = @"D:\Music\ERB\Barack_Obama_vs_Mitt_Romney_Epic_Rap_Battles_Of_History_Season_2.mp3";
+                case "pp":
+                {
+                    player.PlayPause();
                     break;
-                case 1:
-                    //wmp.controls.play();
-                    Win32.SendMessage(iHandle, Win32.WM_COMMAND, 0x00004978, 0x00000000);
+                }
+                case "stop":
+                {
+                    player.Stop();
                     break;
-                case 2:
-                    //wmp.controls.pause();
-                    Win32.SendMessage(iHandle, Win32.WM_COMMAND, 0x00004979, 0x00000000);
+                }
+                case "next":
+                {
+                    player.NextTitle();
                     break;
+                }
+                case "prev":
+                {
+                    player.PreviouseTitle();
+                    break;
+                }
+                case "inc":
+                {
+                    player.IncreaseVolume();
+                    break;
+                }
+                case "dec":
+                {
+                    player.DecreaseVolume();
+                    break;
+                }
             }
         }
-
-       
     }
 }
