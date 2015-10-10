@@ -1,0 +1,3 @@
+[submodule "lib/SimpleHttpServer"]
+	path = lib/SimpleHttpServer
+	url = https://github.com/Kimmax/SimpleHttpServer.git
