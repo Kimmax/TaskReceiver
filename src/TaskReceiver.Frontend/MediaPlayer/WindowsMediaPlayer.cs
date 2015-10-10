@@ -41,12 +41,12 @@ namespace TaskServ_Frontend.MediaPlayer
 
         public override void NextTitle()
         {
-            Win32.SendMessage(iHandle, Win32.WM_COMMAND, 0x0001497F, 0x00000000);
+            Win32.SendMessage(iHandle, Win32.WM_COMMAND, 0x0001497B, 0x00000000);
         }
 
         public override void PreviouseTitle()
         {
-            Win32.SendMessage(iHandle, Win32.WM_COMMAND, 0x0001497B, 0x00000000);
+            Win32.SendMessage(iHandle, Win32.WM_COMMAND, 0x0001497A, 0x00000000);
         }
     }
 }

@@ -14,9 +14,9 @@ namespace TaskServ_Frontend
 
         public override void Execute(List<Tuple<string, string>> param)
         {
-            switch(param[0].Item2)
+            switch(param[0].Item1)
             {
-                case "pp":
+                case "playpause":
                 {
                     player.PlayPause();
                     break;
@@ -36,12 +36,12 @@ namespace TaskServ_Frontend
                     player.PreviouseTitle();
                     break;
                 }
-                case "inc":
+                case "louder":
                 {
                     player.IncreaseVolume();
                     break;
                 }
-                case "dec":
+                case "quieter":
                 {
                     player.DecreaseVolume();
                     break;
