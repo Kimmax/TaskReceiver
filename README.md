@@ -1,4 +1,4 @@
-![Picture](resources/header.png?raw=true)
+![Picture](ressources/header.png?raw=true)
 # TaskReceiver
 Welcome to the TaskReciever Repo!
 You're here because Google brought you here, or you where just lurking around on Github, weren't you? Gotcha. Okay so let me tell what TaskReciever is.
