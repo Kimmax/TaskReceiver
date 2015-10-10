@@ -27,7 +27,7 @@ namespace TaskServ_Frontend
             
             server.RegisterCommand(new CommandEcho("/echo"));
 
-            Console.WriteLine("--- REGISTER COMMANDS END ---");
+            Console.WriteLine("--- REGISTER COMMANDS END ---\n");
 
             server.listen();
         }

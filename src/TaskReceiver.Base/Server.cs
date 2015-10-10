@@ -44,14 +44,16 @@ namespace TaskServ_Backend
             {
                 if (processor.http_url.StartsWith(cmd.CommandTrigger))
                 {
-                    Console.Write(" Found! Executing!");
-                    Console.WriteLine("--GET REQUEST END--");
+                    Console.Write(" Found! Executing!\n");
+                    Console.WriteLine("--GET REQUEST END--\n");
 
                     cmd.Execute(param);
+                    processor.writeSuccess();
                     return;
                 }
             }
 
+            processor.writeFailure();
             Console.Write(" Non Found :(");
             Console.WriteLine("--GET REQUEST END--");
         }
