@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace TaskServ_Backend
 {
@@ -30,21 +31,20 @@ namespace TaskServ_Backend
             Console.WriteLine("Request:\n\t" + processor.http_url);
             Console.WriteLine("Parameter:");
 
-            List<Tuple<string, string>> param = null;
-
-            if (processor.http_url.Contains("="))
-            {
-                param = GetParams(processor.http_url);
-            }
-
-            param.ForEach(x => Console.WriteLine("\t" + x.Item1 + " = " + x.Item2));
-
             Console.WriteLine("\nSearching Handler..");
             foreach (Command cmd in handlerList)
             {
                 if (processor.http_url.StartsWith(cmd.CommandTrigger))
                 {
-                    Console.Write(" Found! Executing!\n");
+                    Console.Write(" Found!");
+
+                    List<Tuple<string, string>> param = new List<Tuple<string,string>>();
+
+                    param = GetParams(processor.http_url, cmd.CommandTrigger);
+
+                    param.ForEach(x => Console.WriteLine("\t" + x.Item1 + " = " + ((x.Item2 == "") ? "no value" : x.Item2)));
+                    
+                    Console.WriteLine("Executing!");
                     Console.WriteLine("--GET REQUEST END--\n");
 
                     cmd.Execute(param);
@@ -66,24 +66,28 @@ namespace TaskServ_Backend
         }
 
         /* Builds a list with all params contained in GET request */
-        static List<Tuple<string, string>> GetParams(string url)
+        static List<Tuple<string, string>> GetParams(string url, string trigger)
         {
             List<Tuple<string, string>> param = new List<Tuple<string, string>>();
-            try
-            {
-                string paramString = url.Split('?')[1];
 
-                foreach (String s in paramString.Split('&'))
+            string paramString = Regex.Split(url, trigger)[1];
+
+            foreach (String s in paramString.Split('/'))
+            {
+                if (string.IsNullOrEmpty(s) || string.IsNullOrWhiteSpace(s))
+                    continue;
+
+                if(s.Contains("="))
                 {
                     param.Add(new Tuple<string, string>(s.Split('=')[0], s.Split('=')[1]));
                 }
+                else
+                {
+                    param.Add(new Tuple<string, string>(s, ""));
+                }
+            }
 
-                return param;
-            }
-            catch (IndexOutOfRangeException)
-            {
-                return null;
-            }
+            return param;
         }
     }
 }

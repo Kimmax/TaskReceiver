@@ -12,7 +12,7 @@ namespace TaskServ_Frontend
 
         public override void Execute(List<Tuple<string, string>> param)
         {
-            Console.WriteLine("CommandEcho:" + param[0].Item2);
+            Console.WriteLine("CommandEcho:" + param[0].Item1);
         }
     }
 }
