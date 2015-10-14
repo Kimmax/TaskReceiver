@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using TaskReceiver.Plugin;
@@ -11,19 +12,12 @@ namespace TaskReceiver.Backend
 {
     public class TaskServServer: HttpServer 
     {
-        List<Command> handlerList = new List<Command>();
+        PluginLoader pluginLoader = new PluginLoader(Path.Combine(Assembly.GetExecutingAssembly().CodeBase, @"\plugins"));
 
         public TaskServServer(int port) : base(port) 
         {
             Console.WriteLine("Server listing on port " + port + "\n");
-        }
-
-        public void RegisterCommand(Command command)
-        {
-            Console.WriteLine("--REGISTER COMMAND BEGIN--");
-            Console.WriteLine("Trigger:\n\t" + command.CommandTrigger);
-            Console.WriteLine("--REGISTER COMMAND END--\n");
-            handlerList.Add(command);
+            pluginLoader.LoadAll();
         }
 
         public override void handleGETRequest(HttpProcessor processor)
@@ -33,7 +27,7 @@ namespace TaskReceiver.Backend
             Console.WriteLine("Parameter:");
 
             Console.WriteLine("\nSearching Handler..");
-            foreach (Command cmd in handlerList)
+            foreach (ITaskReciverPlugin cmd in pluginLoader.LoadedPlugins)
             {
                 if (processor.http_url.StartsWith(cmd.CommandTrigger))
                 {
