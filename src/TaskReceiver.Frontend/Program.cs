@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using TaskServ_Backend;
+using TaskReceiver.Backend;
 
-namespace TaskServ_Frontend
+namespace TaskReceiver.Frontend
 {
     class Program
     {

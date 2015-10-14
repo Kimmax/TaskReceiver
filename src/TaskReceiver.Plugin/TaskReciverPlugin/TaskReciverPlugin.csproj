@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D50F0655-32D2-4EA0-A6D7-9A617BA96B5E}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{0FD9021E-7662-41A2-8E81-39A962D7464A}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TaskReceiver.Frontend</RootNamespace>
-    <AssemblyName>TaskReceiver.Frontend</AssemblyName>
+    <RootNamespace>TaskReceiver.Plugin</RootNamespace>
+    <AssemblyName>TaskReceiver.Plugin</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,23 +39,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MediaPlayer\MediaPlayer.cs" />
-    <Compile Include="MediaPlayer\WindowsMediaPlayer.cs" />
-    <Compile Include="Win32.cs" />
-    <Compile Include="CommandEcho.cs" />
-    <Compile Include="CommandMusicStartStop.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="ITaskReciverPlugin.cs" />
+    <Compile Include="PluginLoader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\lib\SimpleHttpServer\SimpleHttpServer.csproj">
-      <Project>{4fa45fb4-1b9b-4d5d-a2df-a8169e6ea43d}</Project>
-      <Name>SimpleHttpServer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TaskReceiver.Base\TaskServ.Base.csproj">
-      <Project>{623d230a-185d-430a-b8c5-a424a27d64f3}</Project>
-      <Name>TaskServ.Base</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

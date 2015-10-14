@@ -5,8 +5,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using TaskReceiver.Plugin;
 
-namespace TaskServ_Backend
+namespace TaskReceiver.Backend
 {
     public class TaskServServer: HttpServer 
     {

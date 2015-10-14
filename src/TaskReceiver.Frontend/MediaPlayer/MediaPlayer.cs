@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace TaskServ_Frontend.MediaPlayer
+namespace TaskReceiver.Frontend.MediaPlayer
 {
     abstract class MediaPlayer
     {

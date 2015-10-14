@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace TaskServ_Frontend
+namespace TaskReceiver.Frontend
 {
     public static class Win32
     {

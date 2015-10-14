@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace TaskServ_Backend
+namespace TaskReceiver.Backend
 {
     public abstract class Command
     {
