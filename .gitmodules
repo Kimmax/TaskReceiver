@@ -1,3 +1,6 @@
 [submodule "lib/SimpleHttpServer"]
 	path = lib/SimpleHttpServer
 	url = https://github.com/Kimmax/SimpleHttpServer.git
+[submodule "src/TaskReceiver.Plugins"]
+	path = src/TaskReceiver.Plugins
+	url = https://github.com/Kimmax/TaskReceiver.Plugins.git
