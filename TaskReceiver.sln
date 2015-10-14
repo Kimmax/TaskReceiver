@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskServ.Base", "src\TaskRe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskServ.Frontend", "src\TaskReceiver.Frontend\TaskServ.Frontend.csproj", "{D50F0655-32D2-4EA0-A6D7-9A617BA96B5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskReciverPlugin", "src\TaskReceiver.Plugin\TaskReciverPlugin\TaskReciverPlugin.csproj", "{0FD9021E-7662-41A2-8E81-39A962D7464A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskReciverPlugin", "src\TaskReceiver.Plugin\TaskReciverPlugin.csproj", "{0FD9021E-7662-41A2-8E81-39A962D7464A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

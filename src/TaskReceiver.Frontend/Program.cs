@@ -24,9 +24,6 @@ namespace TaskReceiver.Frontend
             TaskServServer server = new TaskServServer(7280);
 
             Console.WriteLine("--- REGISTER COMMANDS BEGIN ---\n");
-            
-            server.RegisterCommand(new CommandEcho("/echo"));
-            server.RegisterCommand(new CommandMusicStartStop("/music"));
 
             Console.WriteLine("--- REGISTER COMMANDS END ---\n");
 

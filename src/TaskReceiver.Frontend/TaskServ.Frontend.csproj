@@ -44,8 +44,6 @@
     <Compile Include="MediaPlayer\MediaPlayer.cs" />
     <Compile Include="MediaPlayer\WindowsMediaPlayer.cs" />
     <Compile Include="Win32.cs" />
-    <Compile Include="CommandEcho.cs" />
-    <Compile Include="CommandMusicStartStop.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

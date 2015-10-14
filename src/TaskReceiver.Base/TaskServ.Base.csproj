@@ -47,7 +47,7 @@
       <Project>{4fa45fb4-1b9b-4d5d-a2df-a8169e6ea43d}</Project>
       <Name>SimpleHttpServer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TaskReceiver.Plugin\TaskReciverPlugin\TaskReciverPlugin.csproj">
+    <ProjectReference Include="..\TaskReceiver.Plugin\TaskReciverPlugin.csproj">
       <Project>{0fd9021e-7662-41a2-8e81-39a962d7464a}</Project>
       <Name>TaskReciverPlugin</Name>
     </ProjectReference>
