@@ -12,6 +12,8 @@ namespace TaskReceiver.Plugin
         private string[] dllFileNames = null;
         public ICollection<ITaskReciverPlugin> LoadedPlugins { get; private set; }
 
+        public EventHandler<PluginLoadedEventArgs> OnPluginLoaded;
+
         public PluginLoader(string pluginDir)
         {
             if (Directory.Exists(pluginDir))
@@ -49,7 +51,10 @@ namespace TaskReceiver.Plugin
                             if (type.GetInterface(pluginType.FullName) != null)
                             {
                                 ITaskReciverPlugin plugin = (ITaskReciverPlugin)Activator.CreateInstance(type);
-                                LoadedPlugins.Add(plugin); 
+                                LoadedPlugins.Add(plugin);
+
+                                if (OnPluginLoaded != null)
+                                    OnPluginLoaded(this, new PluginLoadedEventArgs(plugin));
                             }
                         }
                     }

@@ -12,11 +12,13 @@ namespace TaskReceiver.Backend
 {
     public class TaskServServer: HttpServer 
     {
-        PluginLoader pluginLoader = new PluginLoader(Path.Combine(Assembly.GetExecutingAssembly().CodeBase, @"\plugins"));
+        PluginLoader pluginLoader = new PluginLoader(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location));
 
         public TaskServServer(int port) : base(port) 
         {
             Console.WriteLine("Server listing on port " + port + "\n");
+
+            pluginLoader.OnPluginLoaded += (s, e) => { Console.WriteLine("Plugin loaded: " + e.plugin.PluginName + "\nTrigger: " + e.plugin.CommandTrigger + "\n"); };
             pluginLoader.LoadAll();
         }
 
@@ -50,7 +52,7 @@ namespace TaskReceiver.Backend
 
             processor.writeFailure();
             Console.Write(" Non Found :(");
-            Console.WriteLine("--GET REQUEST END--");
+            Console.WriteLine("--GET REQUEST END--\n");
         }
     
         public override void handlePOSTRequest(HttpProcessor p, StreamReader inputData) {

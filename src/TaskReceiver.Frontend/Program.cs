@@ -22,11 +22,6 @@ namespace TaskReceiver.Frontend
         public void Run()
         {
             TaskServServer server = new TaskServServer(7280);
-
-            Console.WriteLine("--- REGISTER COMMANDS BEGIN ---\n");
-
-            Console.WriteLine("--- REGISTER COMMANDS END ---\n");
-
             server.listen();
         }
     }

@@ -6,10 +6,13 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleHttpServer", "lib\SimpleHttpServer\SimpleHttpServer.csproj", "{4FA45FB4-1B9B-4D5D-A2DF-A8169E6EA43D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskServ.Base", "src\TaskReceiver.Base\TaskServ.Base.csproj", "{623D230A-185D-430A-B8C5-A424A27D64F3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{434DF058-97F0-4E47-8675-5464E99ED7EF} = {434DF058-97F0-4E47-8675-5464E99ED7EF}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskServ.Frontend", "src\TaskReceiver.Frontend\TaskServ.Frontend.csproj", "{D50F0655-32D2-4EA0-A6D7-9A617BA96B5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskReciverPlugin", "src\TaskReceiver.Plugin\TaskReciverPlugin.csproj", "{0FD9021E-7662-41A2-8E81-39A962D7464A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskReciver.Plugin", "src\TaskReceiver.Plugin\TaskReciver.Plugin.csproj", "{0FD9021E-7662-41A2-8E81-39A962D7464A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskReceiver.Plugins", "src\TaskReceiver.Plugins\TaskReceiver.Plugins.csproj", "{434DF058-97F0-4E47-8675-5464E99ED7EF}"
 EndProject

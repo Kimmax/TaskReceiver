@@ -53,8 +53,16 @@
       <Project>{623d230a-185d-430a-b8c5-a424a27d64f3}</Project>
       <Name>TaskServ.Base</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TaskReceiver.Plugins\TaskReceiver.Plugins.csproj">
+      <Project>{434df058-97f0-4e47-8675-5464e99ed7ef}</Project>
+      <Name>TaskReceiver.Plugins</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

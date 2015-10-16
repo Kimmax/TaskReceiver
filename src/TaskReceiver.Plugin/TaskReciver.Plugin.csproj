@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="IMediaPlayer.cs" />
     <Compile Include="ITaskReciverPlugin.cs" />
+    <Compile Include="PluginLoadedEventArgs.cs" />
     <Compile Include="PluginLoader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
