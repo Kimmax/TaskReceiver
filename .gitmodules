@@ -4,3 +4,6 @@
 [submodule "src/TaskReceiver.Plugins"]
 	path = src/TaskReceiver.Plugins
 	url = https://github.com/Kimmax/TaskReceiver.Plugins.git
+[submodule "src/TaskReceiver.Plugin"]
+	path = src/TaskReceiver.Plugin
+	url = https://github.com/Kimmax/TaskReceiver.Plugin.git
