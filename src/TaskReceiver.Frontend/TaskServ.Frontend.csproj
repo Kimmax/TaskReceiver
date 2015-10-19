@@ -53,10 +53,6 @@
       <Project>{623d230a-185d-430a-b8c5-a424a27d64f3}</Project>
       <Name>TaskServ.Base</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TaskReceiver.Plugins\TaskReceiver.Plugins.Nuernberger.csproj">
-      <Project>{434df058-97f0-4e47-8675-5464e99ed7ef}</Project>
-      <Name>TaskReceiver.Plugins.Nuernberger</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
