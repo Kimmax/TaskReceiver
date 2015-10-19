@@ -14,7 +14,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskServ.Frontend", "src\Ta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskReciver.Plugin", "src\TaskReceiver.Plugin\TaskReciver.Plugin.csproj", "{0FD9021E-7662-41A2-8E81-39A962D7464A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskReceiver.Plugins", "src\TaskReceiver.Plugins\TaskReceiver.Plugins.csproj", "{434DF058-97F0-4E47-8675-5464E99ED7EF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskReceiver.Plugins.Nuernberger", "src\TaskReceiver.Plugins\TaskReceiver.Plugins.Nuernberger.csproj", "{434DF058-97F0-4E47-8675-5464E99ED7EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
